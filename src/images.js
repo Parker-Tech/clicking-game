@@ -3,7 +3,7 @@ import appa from './assets/appa.png'
 import azula from './assets/azula.png'
 import boomy from './assets/boomy.png'
 import firelord from './assets/firelord.png'
-// import iroh from './assets/iroh.png'
+import iroh from './assets/iroh.png'
 import katara from './assets/katara.png'
 import mai from './assets/mai.png'
 import momo from './assets/momo.png'
@@ -17,7 +17,7 @@ const images = [
   azula,
   boomy,
   firelord,
-  // iroh,
+  iroh,
   katara,
   mai,
   momo,

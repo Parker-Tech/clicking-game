@@ -13,19 +13,19 @@ class App extends Component {
     highscore: 0
   };
 
-  gameOver = () => {
-    if (this.state.score > this.state.highscore) {
-      this.setState({highscore: this.state.score}, function() {
-        console.log(this.state.highscore);
-      });
-    }
-    this.state.cards.forEach(card => {
-      card.count = 0;
-    });
-    alert(`Game Over :( \nscore: ${this.state.score}`);
-    this.setState({score: 0});
-    return true;
-  }
+  // endGame = () => {
+  //   if (this.state.score > this.state.highscore) {
+  //     this.setState({highscore: this.state.score}, function() {
+  //       console.log(this.state.highscore);
+  //     });
+  //   }
+  //   // this.state.cards.forEach(card => {
+  //   //   card.count = 0;
+  //   // });
+  //   alert(`Game Over :( \nscore: ${this.state.score}`);
+  //   this.setState({score: 0});
+  //   return true;
+  // }
 
   clickCount = id => {
     this.state.cards.find((o, i) => {
@@ -38,7 +38,7 @@ class App extends Component {
           this.state.cards.sort(() => Math.random() - 0.5)
           return true; 
         } else {
-          this.gameOver();
+          this.endGame();
         }
       }
     });
@@ -47,7 +47,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header score={this.state.score} highscore={this.state.highscore}>Clicky Game</Header>
+        <Header >Clicky Game</Header> { /* score={this.state.score} highscore={this.state.highscore} */ }
         {this.state.cards.map(card => (
           <Card
             clickCount={this.clickCount}
